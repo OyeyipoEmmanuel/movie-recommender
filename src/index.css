@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900');
+
+body{
+    position: relative;
+    font-family: "Inter", sans-serif;
+    background: url('/public/backgroundImg.jpeg');
+    background-repeat: repeat-x;
+    background-size: cover;
+    min-height: 100vh;
+}
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: -1;
+}
