@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import config from "../config/config";
 
-
 export const fetchMovie = createAsyncThunk("fetchMovie", async (genre) => {
   // Fetching with genre
   const response = await fetch(
@@ -17,7 +16,7 @@ export const fetchMovie = createAsyncThunk("fetchMovie", async (genre) => {
       );
       const trailerData = await trailerResponse.json();
 
-    //   Return movies with their trailer   
+      //   Return movies with their trailer
 
       return {
         ...movie,
@@ -28,7 +27,7 @@ export const fetchMovie = createAsyncThunk("fetchMovie", async (genre) => {
     })
   );
 
-//   Store the movies
+  //   Store the movies
   localStorage.setItem("MoviesList", JSON.stringify(moviesTrailers));
 
   return moviesTrailers;
@@ -55,7 +54,7 @@ const movieSlicer = createSlice({
     builder.addCase(fetchMovie.pending, (state) => {
       state.isLoading = true;
       state.status = "loading";
-      localStorage.setItem("GenreName", state.genreName)
+      localStorage.setItem("GenreName", state.genreName);
     });
     builder.addCase(fetchMovie.fulfilled, (state, action) => {
       state.isLoading = false;
@@ -66,7 +65,6 @@ const movieSlicer = createSlice({
       state.status = "failed";
       state.isLoading = false;
       state.error = true;
-      
     });
   },
 });

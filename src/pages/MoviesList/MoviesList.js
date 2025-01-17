@@ -16,6 +16,7 @@ const MoviesList = () => {
   const genreName = useSelector((state) => state.fetchMovie.genreName);
   const copiedText = useSelector((state)=> state.copyText.copied)
 
+  // Go to the top of the page on every first render
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -31,7 +32,7 @@ const MoviesList = () => {
       toast.error(
         "An error occured while trying to get your movies, please try again!",
         {
-          position: "top-right",
+          position: "top-left",
           autoClose: 5000,
           closeOnClick: true,
           hideProgressBar: false,
@@ -40,7 +41,7 @@ const MoviesList = () => {
       copiedText && toast.success(
         "Copied to clipboard!",
         {
-          position: "top-right",
+          position: "top-left",
           autoClose: 3000,
           closeOnClick: true,
           hideProgressBar: false,

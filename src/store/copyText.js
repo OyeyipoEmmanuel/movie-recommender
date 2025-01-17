@@ -20,11 +20,11 @@ const copySlice = createSlice({
     builder.addCase(copyText.fulfilled, (state) => {
       state.message = "Copied to clipboard!";
       state.copied = true;
-      console.log(state.copied)
+      
     })
     builder.addCase(copyText.rejected, (state) => {
         state.message = "Failed to copy! Please try again";
-        console.log("err")
+        
     });
     
   },
