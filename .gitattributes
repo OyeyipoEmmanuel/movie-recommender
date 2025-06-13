@@ -1,0 +1,11 @@
+# Treat .jsx files as JavaScript
+*.jsx linguist-language=JavaScript
+
+# Treat .tsx files as TypeScript
+*.tsx linguist-language=TypeScript
+
+# Optional: treat .js files as JavaScript explicitly (usually default)
+*.js linguist-language=JavaScript
+
+# Optional: treat .ts files as TypeScript explicitly (usually default)
+*.ts linguist-language=TypeScript
