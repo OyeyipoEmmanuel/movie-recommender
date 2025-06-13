@@ -19,6 +19,7 @@ const MoviesList = () => {
   // Go to the top of the page on every first render
   useEffect(() => {
     window.scrollTo(0, 0);
+    
   }, []);
 
   useEffect(() => {
